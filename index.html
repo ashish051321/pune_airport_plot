@@ -135,7 +135,11 @@ section { padding: 72px 0; border-top: 1px solid var(--line); }
 .small { font-size: 14px; color: var(--muted); margin-top: 12px; }
 
 /* why */
-.why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 36px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 32px 0 0; border-top: 2px solid var(--ink); }
+.stats div { padding: 18px 16px 18px 0; border-bottom: 1px solid var(--line); }
+.stats dt { font-size: 14px; color: var(--muted); }
+.stats dd { margin: 2px 0 0; font-family: var(--display); font-stretch: 75%; font-weight: 800; font-size: clamp(34px, 4.6vw, 48px); line-height: 1.05; color: var(--plot); }
+.why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 36px; margin-top: 44px; }
 .why p { margin-top: 10px; color: var(--ink-soft); }
 .why h3 { padding-top: 14px; border-top: 3px solid var(--plot); }
 
@@ -177,6 +181,7 @@ footer p { max-width: 90ch; }
   .hero, .two { grid-template-columns: 1fr; gap: 32px; }
   .facts { grid-template-columns: repeat(2, 1fr); }
   .why { grid-template-columns: 1fr; gap: 24px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
   .gallery figure:first-child { grid-column: span 2; grid-row: span 2; }
   .docs { columns: 1; }
@@ -301,9 +306,28 @@ footer p { max-width: 90ch; }
 <section id="why">
   <div class="wrap">
     <h2>Why this plot holds value</h2>
+    <p class="lede" style="margin-top:16px">Daily needs within walking distance, two of Pune's biggest IT hubs a short drive away, and a quiet, settled neighbourhood that families feel safe in.</p>
+    <dl class="stats">
+      <div><dt>PMPML bus stop</dt><dd>400 m</dd></div>
+      <div><dt>Market area</dt><dd>500 m</dd></div>
+      <div><dt>Pune Airport</dt><dd>~5 km</dd></div>
+      <div><dt>Business Bay IT hub, Yerwada</dt><dd>~6 km</dd></div>
+    </dl>
     <div class="why">
       <div>
-        <h3>Airport corridor</h3>
+        <h3>Walk to the bus and the market</h3>
+        <p>A PMPML city bus stop is about 400 m away and the local market about 500 m away. Groceries, vegetables and everyday shopping are a short walk, and the bus connects you to the rest of Pune without a car.</p>
+      </div>
+      <div>
+        <h3>Close to Pune's IT jobs</h3>
+        <p>Business Bay in Yerwada (about 6 km) and EON IT Park in Kharadi (about 12 km), two of the city's major office hubs, are a short drive away. That means a large pool of working professionals looking for homes to rent nearby.</p>
+      </div>
+      <div>
+        <h3>A safe, settled neighbourhood</h3>
+        <p>Many of the neighbours are retired Army, Air Force and defence personnel. The area is quiet, well kept and close-knit, which makes it a comfortable place for families and for elderly parents.</p>
+      </div>
+      <div>
+        <h3>On the airport corridor</h3>
         <p>Dhanori sits right next to Pune International Airport. Areas around airports in Indian cities have historically kept steady demand from both residents and businesses.</p>
       </div>
       <div>
@@ -396,8 +420,11 @@ const CONFIG = {
   video: { src: "images/Vid.mp4", poster: "images/3.jpeg" },
   // Approximate distances: check on Google Maps and adjust
   distances: [
+    ["PMPML bus stop", "~400 m"],
+    ["Market area", "~500 m"],
     ["Pune International Airport (Lohegaon)", "~5 km"],
     ["Viman Nagar", "~6 km"],
+    ["Business Bay IT hub, Yerwada", "~6 km"],
     ["Kharadi IT park (EON, WTC)", "~12 km"],
     ["Pune railway station", "~12 km"],
     ["Hinjewadi IT park", "~28 km"]
